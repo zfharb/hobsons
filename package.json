@@ -1,0 +1,19 @@
+{
+  "name": "hobsons_interview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^4.9.0",
+    "cypress-xpath": "^1.6.0"
+  },
+  "devDependencies": {
+    "mocha": "^8.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "open:cypress": "./node_modules/.bin/cypress open"
+  },
+  "author": "",
+  "license": "ISC"
+}
