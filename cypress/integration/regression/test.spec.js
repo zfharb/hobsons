@@ -1,28 +1,29 @@
 require('cypress-xpath')
+import { visitBaseURL } from '../../fixtures/test-base';
 
 
 describe('Unit test our math functions', () => {
     context('math', () => {
       it('it should visit hobsons home page', () => {
-        cy.visit('http://hobsons.com', { timeout: 10000 });
+        visitBaseURL();
         cy.get('title').should('have.text', 'Education Advances | Hobsons');
       })
 
       it('it should click on intersect tile', () => {
-        cy.visit('http://hobsons.com', { timeout: 18000 });
+        visitBaseURL();
         cy.xpath('//*[@id="body"]/section/div/div[2]/a[2]').click({ force: true });
         cy.get('title').should('have.text', 'Intersect | Hobsons');
       })
 
       it('it should scroll down to the U.S map', () => {
-        cy.visit('http://hobsons.com', { timeout: 18000 });
+        visitBaseURL();
         cy.xpath('//*[@id="body"]/section/div/div[2]/a[2]').click({ force: true });
         cy.get('title').should('have.text', 'Intersect | Hobsons');
         cy.get('.block-stats-map__map').scrollIntoView(); 
       })
      
       it('it should select differrent states and regions', () => {
-        cy.visit('http://hobsons.com', { timeout: 18000 });
+        visitBaseURL();
         cy.xpath('//*[@id="body"]/section/div/div[2]/a[2]').click({ force: true });
         cy.get('title').should('have.text', 'Intersect | Hobsons');
         cy.get('.block-stats-map__map').scrollIntoView();
